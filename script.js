@@ -1,4 +1,3 @@
-const cors_anywhere_url = "https://larrybolt-cors-anywhere.herokuapp.com/";
 const mapping = {
   dtstart: "start",
   dtend: "end",
@@ -63,7 +62,7 @@ function load_ics_from_base64(input) {
 }
 
 function fetch_ics_feed(url, cors, show_share) {
-  $.get(cors ? `${cors_anywhere_url}${url}` : url, (res) => load_ics(res));
+  $.get(url, (res) => load_ics(res));
   if (show_share) {
     createShareUrl(url, !!cors, "My Feed");
   }
@@ -98,7 +97,7 @@ $(document).ready(function () {
     $("h1").text(url_title);
   }
   if (url_feed) {
-    url = url_feed.replace(cors_anywhere_url, "");
+    url = url_feed;
     console.log(`Load ${url}`);
     fetch_ics_feed(url, url_cors, false);
     $("#eventsource").val(url);
