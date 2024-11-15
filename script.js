@@ -79,6 +79,8 @@ $(document).ready(function () {
     editable: false,
     minTime: "7:30:00",
     maxTime: "21:30:00",
+    firstDay: 1,
+    locale: "de",
   });
   const url_feed = URIHash.get("feed");
   const url_file = URIHash.get("file");
