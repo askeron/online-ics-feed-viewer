@@ -76,8 +76,8 @@ $(document).ready(function () {
     },
     navLinks: true,
     editable: false,
-    minTime: "7:30:00",
-    maxTime: "21:30:00",
+    //minTime: "7:30:00",
+    //maxTime: "21:30:00",
     firstDay: 1,
     locale: "de",
   });
